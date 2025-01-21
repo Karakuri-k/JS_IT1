@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kortspill</title>
+    <style>
+        * {
+            margin: none;
+            padding: none;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("bilder/felt.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        img {
+            height: 200px;
+            width: 137px;
+            margin-left: -71px;
+            border-radius: 6px;
+        }
+        #cardHolder {
+            margin-left: 70px;
+            max-width: 80%;
+        }
+        .card {
+            border: 2px solid red;
+        }
+    </style>
 </head>
+
 <body>
 
+    <h1>Balatro hadde vært artig</h1>
+    <div id="cardHolder">
+
+    </div>
+
+
+
     <script>
-        
+        const cardHolder = document.getElementById("cardHolder")
+
+        const suits = ["spades", "diamonds", "clubs", "hearts"]
+
+        for (const suit of suits) {
+            console.log(suit)
+            for (let i = 1; i < 14; i++) {
+                const imgElm = document.createElement("img")
+                imgElm.src = "kortstokk/" + i + "_of_" + suit + ".png"
+                cardHolder.appendChild(imgElm)
+            }
+        }
     </script>
 </body>
+
 </html>
