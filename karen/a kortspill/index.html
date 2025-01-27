@@ -51,14 +51,24 @@
 
         const suits = ["spades", "diamonds", "clubs", "hearts"]
 
-        for (const suit of suits) {
+
+        const tall = Math.floor(Math.random() * 14) + 1
+
+        const farge = Math.floor(Math.random() * suits.length);
+
+        const imgElm = document.createElement("img")
+        imgElm.src = "kortstokk/" + tall + "_of_" + suits[farge] + ".png"
+
+        cardHolder.appendChild(imgElm)
+
+       /*for (const suit of suits) {
             console.log(suit)
             for (let i = 1; i < 14; i++) {
                 const imgElm = document.createElement("img")
                 imgElm.src = "kortstokk/" + i + "_of_" + suit + ".png"
                 cardHolder.appendChild(imgElm)
             }
-        }
+        }*/
     </script>
 </body>
 

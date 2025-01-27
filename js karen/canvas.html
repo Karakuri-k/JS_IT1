@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas intro</title>
+    <style>
+        * {
+            margin: none;
+            padding: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: aliceblue;
+            height: 100vh;
+        }
+
+        canvas {
+            border: 3px solid white;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas></canvas>
+
+    <script>
+        let i = 0
+        
+        const HEIGHT = 840
+        const WIDTH = 1500
+
+        const canvas = document.querySelector("canvas")
+        canvas.width = WIDTH
+        canvas.height = HEIGHT
+
+        const ctx = canvas.getContext("2d");
+
+        const grd = ctx.createRadialGradient(750, 420, 10, 750, 420, 750);
+        grd.addColorStop(0, "rgb(210, 220, 250)");
+        grd.addColorStop(0.2, "rgb(220, 230, 250)");
+        grd.addColorStop(1, "white");
+
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, 1500, 840);
+
+        const grdpink = ctx.createRadialGradient(400, 400, 10, 200, 300, 300);
+        grdpink.addColorStop(0, 'hsl(319, 100%, 50%, 0.5)');
+        grdpink.addColorStop(0.5, 'hsl(319, 100%, 50%, 0.3)');
+        grdpink.addColorStop(1, 'hsl(319, 100%, 50%, 0)');
+
+        console.log(grdpink)
+
+        ctx.fillStyle = grdpink;
+        ctx.fillRect(0, 0, 1500, 840);
+    </script>
+</body>
+
+</html>
