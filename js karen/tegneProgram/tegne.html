@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tegneprogram</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(20, 30px);
+            grid-template-rows: repeat(20, 30px);
+        }
+        .container > div {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+
+    <script>
+        const containerElm = document.querySelector(".container")
+        const divElm = document.createElement("div")
+        containerElm.appendChild(divElm)
+
+    </script>
+</body>
+</html>
