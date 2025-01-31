@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tegneprogram</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+        
         .container {
             display: grid;
             grid-template-columns: repeat(20, 30px);
             grid-template-rows: repeat(20, 30px);
+            gap: 2px;
         }
         .container > div {
             background-color: black;
@@ -22,8 +31,15 @@
 
     <script>
         const containerElm = document.querySelector(".container")
-        const divElm = document.createElement("div")
-        containerElm.appendChild(divElm)
+
+        for (let i = 0; i < 400; i++) {
+            const divElm = document.createElement("div")
+            containerElm.appendChild(divElm)
+
+            divElm.addEventListener("click", function() {
+                divElm.style.backgroundColor = "white"
+            })
+        }
 
     </script>
 </body>
