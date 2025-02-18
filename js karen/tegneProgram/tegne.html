@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +13,20 @@
             height: 100vh;
 
         }
-        
+
         .container {
             display: grid;
             grid-template-columns: repeat(20, 30px);
             grid-template-rows: repeat(20, 30px);
             gap: 2px;
         }
-        .container > div {
+
+        .container>div {
             background-color: black;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
 
@@ -36,11 +39,12 @@
             const divElm = document.createElement("div")
             containerElm.appendChild(divElm)
 
-            divElm.addEventListener("click", function() {
+            divElm.addEventListener("click", function () {
                 divElm.style.backgroundColor = "white"
             })
         }
 
     </script>
 </body>
+
 </html>
