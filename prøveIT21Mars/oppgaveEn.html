@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img {
+            width: 100%;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        div {
+            background-color: aliceblue;
+            height: 320px;
+            width: 290px;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+        button {
+            background-color: red;
+            color: white;
+            border-radius: 8px;
+            height: 36px;
+            width: 100px;
+            margin-top: 16px;
+        }
+        .green {
+            background-color: green;
+        }
+        p {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="en">
+        <h1>Boks 1</h1>
+        <button id="knapp" onclick="bytt(this)" class="green">Klikk meg</button>
+    </div>
+    <div class="to">
+        <h1>Boks 2</h1>
+    </div>
+    <div class="tre">
+        <h1>Boks 3</h1>
+        <p></p>
+    </div>
+    <script>
+        const knapp = document.getElementById("knapp")
+
+        function bytt(farge) {
+            if (event.target.classList.contains("green")) {
+                event.target.classList.remove("green")
+                
+            } else {
+                event.target.classList.add("green")
+            }
+        }
+
+        const paragraf = document.querySelector("p")
+
+        let tall = 1
+        for (let i = 2; i < 100; i++) {
+            tall = tall + " " + i
+        }
+        paragraf.innerHTML = tall
+    </script>
+</body>
+</html>
